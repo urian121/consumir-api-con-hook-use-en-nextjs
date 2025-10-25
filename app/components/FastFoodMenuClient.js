@@ -1,21 +1,18 @@
-// Componente del lado del servidor, es decir que ejecuta en el servidor de Next.js, no en el navegador.
+// Componente del lado del cliente, es decir que ejecuta en el navegador del usuario.
+'use client';
 import { use } from 'react'; // Importa el hook use de React 19
 import Image from 'next/image'; // Importa el componente Image de Next.js 16
 import { FiMinus, FiPlus, FiTrash2 } from 'react-icons/fi'; // Importa los iconos FiMinus, FiPlus, FiTrash2 de React Icons
 
-// Función para obtener el menú de fast food desde la API
-async function fetchMenu() {
-  const res = await fetch("https://devsapihub.com/api-fast-food", { next: { revalidate: 60 } }); // cachea 1 min
-  if (!res.ok) throw new Error("Error al obtener el menú");
-  return res.json();
-}
+// 🔥 Promesa memoizada fuera del componente
+const menuPromise = fetch("https://devsapihub.com/api-fast-food")
+  .then(res => res.json())
+  .catch(err => console.error("Error al obtener el menú", err));
 
 // Componente para mostrar el menú de fast food
 export default function FastFoodMenu() {
+ const menu = use(menuPromise); // se resuelve solo una vez
 
-  // Usar el hook use para obtener el menú de fast food
-  const menu = use(fetchMenu());
-  
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
       <div className="max-w-4xl mx-auto">
