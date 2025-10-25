@@ -1,11 +1,15 @@
 # 🍔 Fast Food Menu - Hook `use()` en Next.js
 
-Una aplicación moderna de menú de comida rápida que demuestra el poder del nuevo hook `use()` de React en Next.js 15.
+Una aplicación moderna de menú de comida rápida que demuestra el poder del nuevo hook `use()` de React en Next.js 16.
+
+La idea es poder consumir una API externa sin necesidad de hacer uso de los hooks `useEffect` y `useState`. Una manera más sencilla y moderna de manejar promesas en React.
+
+![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/refs/heads/master/consumir-api-con-use-react19-next16.gif)
 
 ## 🚀 Características
 
 - **Hook `use()` de React**: Implementación del nuevo hook experimental para manejo de promesas
-- **Next.js 15**: Última versión con soporte para React 19
+- **Next.js 16**: Última versión con soporte para React 19
 - **Tailwind CSS**: Diseño moderno y responsivo
 - **React Icons**: Iconografía profesional
 - **API Externa**: Consumo de datos desde `devsapihub.com`
