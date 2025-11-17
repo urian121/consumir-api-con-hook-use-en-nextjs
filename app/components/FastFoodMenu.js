@@ -12,6 +12,7 @@ async function fetchMenu() {
 // Componente para mostrar el menú de fast food
 export default function FastFoodMenu() {
   const menu = use(fetchMenu());
+  
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
       <div className="max-w-4xl mx-auto">
