@@ -1,5 +1,6 @@
 import { Suspense } from "react";
-import FastFoodMenu from "./components/FastFoodMenu";
+// import FastFoodMenu from "./components/FastFoodMenu";
+import FastFootMenuClient from "./components/FastFoodMenuClient";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
           </div>
         </div>
       }>
-        <FastFoodMenu />
+        <FastFootMenuClient />
       </Suspense>
     </>
   );
